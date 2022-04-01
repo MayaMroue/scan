@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="data" href="/data.js">
+</head>
+
+
+
+
+
+
+
+<body>
+    <div id="container">
+        <div id = "div1" style="display:block" onclick = "replace('div1','div2')"><div class="container1">
+        <div class="left"><h1 class="not">Not</h1></div>
+          <div class="right"><h1 class="hing">hing <sub>here</sub></h1></div>
+        </div>
+          
+        </div>
+        <div id = "div2" style="display:none" onclick = "replace('div2','div1')"><div class="container2">
+            <div class="left2"><h1 class="not2"><sup>Now</sup>Get</h1></div>
+            <div class="right2"><h1 class="hing2">Out</h1></div>
+            </div></div>
+            
+
+          </div>
+        
+</body>
+</html>
+
+<style>
+    #container{
+  width:100%;
+  height:800px;
+  /* background-color:purple; */
+/*   position:relative; */
+    cursor:pointer;
+}
+
+
+#div1{
+width:100%;
+height:500px;
+  /* background-color:red; */
+  transition: 1s;
+
+
+  
+}
+#div2{
+width:100%;
+ height:500px;
+  /* background-color:blue; */
+ transition: 5s;
+
+}
+
+#div3{
+width:100%;
+ height:500px;
+  /* background-color:yellow; */
+
+}
+
+
+.container1{
+    display:flex;
+    width:100%;
+    height:800px;
+    position :relative;
+}
+.left
+{ 
+    flex:1;
+    background-color:black;
+    cursor: pointer;
+}
+.left .not{
+    color:rgb(193, 199, 193);
+    text-align:right;
+    margin-top:40%;
+    font-size:80px;
+    text-shadow: 5px 5px 10px rgb(111, 114, 111);
+
+
+}
+
+
+.right
+{ 
+    flex:1;
+    background-color:rgb(193, 199, 193);
+    cursor: pointer;
+}
+
+.right .hing{
+        margin-top:40%;
+        color:black;
+        font-size:80px;
+        text-shadow: 5px 5px 10px black;
+
+
+    }
+sub{
+  font-size:10px;
+}
+
+  .container2{
+    display:flex;
+    width:100%;
+    height:800px;
+    position :relative;
+    
+}
+.left2
+{ 
+    flex:1;
+    background-color:rgb(193, 199, 193);
+    cursor: pointer;
+}
+.left2 .not2{
+    color:black;
+    text-align:right;
+    margin-top:40%;
+    font-size:80px;
+    text-shadow: 5px 5px 10px black;
+  
+
+}
+sup{
+position:absolute;
+  font-size:10px;
+  margin-left:-20px;
+}
+
+
+.right2
+{ 
+    flex:1;
+    background-color:black;
+    cursor: pointer;
+}
+
+.right2 .hing2
+{
+        margin-top:40%;
+       
+        color:rgb(193, 199, 193);
+        font-size:80px;
+ text-shadow: 5px 5px 10px rgb(111, 114, 111);
+    }
+
+</style>
+
+<script>
+
+function replace( hide, show ) {
+  document.getElementById(hide).style.display="none";
+  document.getElementById(show).style.display="block";
+}
+
+</script>

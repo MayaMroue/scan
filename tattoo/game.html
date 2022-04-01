@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="content">
+    
+
+    <div class="container">
+            <h2 class="quote" id="quote"> ..</h2>
+                <div class="counter" id="clicks">0</div>
+            <div class="circle" id="circle" onClick="onClick()"></div>
+        
+            
+    </div>
+  
+</body>
+</html>
+
+<style>
+    body{
+        
+         /* background: url("img/gif2.gif") 0 0 no-repeat ;
+        background-size: 100%;
+        /* opacity: 0.3; */
+        /* animation: anim-ss steps(23) 10s infinite;  */
+         background-color:black;
+         display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        position :relative;
+         } 
+
+        .quote{
+        color:white;
+        margin-bottom:110px;
+
+
+        }
+
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction:column;
+        width:100%;
+    }
+    .circle{
+        width:50px;
+        height:50px;
+        background-color: blueviolet;
+        border-radius:50%;
+        cursor: pointer;
+       /* transition:1s; */
+       position:absolute;
+       top:45%; 
+         left:48%; 
+
+     
+    }
+    /* .circle:hover{
+        width:100px;
+        height:100px;
+        transition: 3s;
+
+    } */
+    .counter{
+        padding-top:20px;
+color:bisque
+        /* position:fixed; */
+
+    }
+
+</style>
+<script>
+let qs=[
+    {question:".."},
+    {question:"Hey!" },
+    { question:"Bye!"},
+    { question:"uh you are smartt"},
+    {question:" what are you doing here"},
+    {question:"Uhh BTW!"},
+    {question:".."},
+    {question:"Hey!" },
+    { question:"you"},
+    {question:" what are you doing here"},
+    {question:"Uhh BTW!"},
+    {question:"100 players entered heaven through click on me "},
+    { question:"whether you want it or not"},
+    {question:"click on me "},
+    { question:"Let's Make Money"},
+    {question:"Now Stop clicking on Me"},
+    { question:"WOO!"},
+    {question:" what are you doing here"},
+    {question:"Uhh Rima!"},
+    {question:"how's everything?"},
+    {question:"uh! its okay"},
+    { question:"uh! its okay"},
+    {question:"your life as a carrot "},
+    { question:"Let's Make Money"},
+       ];
+       localStorage.setItem("QS", JSON.stringify(qs));
+
+
+var data = JSON.parse(localStorage.getItem('QS'));
+// lezem hot mahal l i temshe hassab l count bye
+
+
+var clicks = 0;
+var grow =document.getElementById("circle");
+var content=document.getElementById("content");
+var width1=50;
+ var height1=50;
+
+
+    function onClick() {
+       console.log();
+       clicks += 1;
+       width1 +=1; height1 +=1;
+      var width2= grow.style.width=width1 +"px";
+      var height2= grow.style.height=height1 +"px";
+
+
+        if (clicks=="2"){
+        //  grow.style.marginRight="800px"; 
+            //  grow.style.marginTop="-20%"; 
+             grow.style.top="10px"; 
+             grow.style.left="10px"; 
+             grow.style.width="5px"; 
+             grow.style.height="5px"; 
+             grow.style.backgroundColor="red"; 
+
+        }
+        if (clicks=="3"){
+          
+             grow.style.top="45%"; 
+             grow.style.left="48%"; 
+             grow.style.backgroundColor="blueviolet"; 
+
+        }
+        if (clicks=="6"){
+            grow.style.top="90%"; 
+             grow.style.left="90%"; 
+             grow.style.width="8px"; 
+             grow.style.height="8px"; 
+             grow.style.backgroundColor="yellow"; 
+
+    }
+    if (clicks=="7"){
+            grow.style.top="45%"; 
+             grow.style.left="48%"; 
+             grow.style.backgroundColor="blueviolet";  
+             grow.style.color="yellow";
+
+    }
+    // if (clicks=="8"){
+    //     grow.style.width="5px"; 
+    //    grow.style.height="5px"; 
+    //    grow.style.transition="1s";
+    //    grow.style.top="50%"; 
+    //   grow.style.left="50%"; 
+    //   grow.style.backgroundColor="black"; 
+
+    // }
+    // if(click=="10"){
+        
+    // }
+
+
+            // if(clicks=="20"){
+            //     grow.style.transition="3s"
+            //     grow.style.width="50px"
+            //     grow.style.height="50px"
+             
+            // }
+
+
+
+       document.getElementById("clicks").innerHTML = clicks;
+        
+       
+            console.log(width1);
+                    j = data.length;
+      if (clicks <= j){
+             var obj = (data[clicks]);
+              console.log(obj.question); 
+              document.getElementById("quote").innerHTML =obj.question
+            }
+              else{
+                var obj = (data[0]);
+                document.getElementById("quote").innerHTML =obj.question
+
+              }
+
+
+        
+    };
+</script>
